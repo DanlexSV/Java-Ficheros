@@ -12,7 +12,11 @@ public class gestor {
 		// TODO Auto-generated method stub
 
 		String opcion;
-		opcion = JOptionPane.showInputDialog("Escriba una opcion");
+		opcion = JOptionPane.showInputDialog("A ~ Dar de alta" + "\n" +
+				"G ~ Guarda el contacto" + "\n" + 
+				"L ~ Listar los contactos" + "\n" + 
+				"B ~ Borrar un contacto" + "\n" + 
+				"S ~ Salir" + "\n" + "Escriba una opcion").toUpperCase();
 		
 		while (!opcion.equals("S")) {
 			
@@ -23,7 +27,11 @@ public class gestor {
 			case "B": borrar();break;
 			default:  JOptionPane.showMessageDialog(null, "Opcion incorrecta");
 			}
-				opcion = JOptionPane.showInputDialog("Escriba una opcion");
+				opcion = JOptionPane.showInputDialog("A ~ Dar de alta" + "\n" +
+						"G ~ Guarda el contacto" + "\n" + 
+						"L ~ Listar los contactos" + "\n" + 
+						"B ~ Borrar un contacto" + "\n" + 
+						"S ~ Salir" + "\n" + "Escriba una opcion").toUpperCase();
 		}
 	
 	}
@@ -119,7 +127,7 @@ public class gestor {
 		// TODO Auto-generated method stub
 		 String nombre = JOptionPane.showInputDialog("Escriba un nombre");
 		String telf = JOptionPane.showInputDialog("Escriba un telefono");
-		Agenda.add(nombre+","+telf);
+		Agenda.add(nombre+", "+telf);
 	}
 
 }
