@@ -7,8 +7,7 @@ public class wallet {
 		String opt = JOptionPane.showInputDialog("I ~ Ingresar dinero a la cuenta" + "\n" + 
 				"R ~ Retirar dinero de la cuenta" + "\n" + "L ~ Listar cantidad actual en la cuenta" 
 				+ "\n" + "Escribe una de las opciones").toUpperCase();
-		String name = JOptionPane.showInputDialog("Escriba su nombre para operar");
-		cuenta micuenta = new cuenta(name);
+		cuenta micuenta = new cuenta(JOptionPane.showInputDialog("Escriba su nombre para operar"));
 		while (!opt.equals("S")) {
 			switch(opt) {
 			case "I":
