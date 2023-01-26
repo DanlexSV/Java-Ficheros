@@ -5,10 +5,11 @@ public class spotif {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+
 		ArrayList<cancion> listaCanciones = new ArrayList<cancion>();
-		gestionFichero gf = new gestionFichero("cancion.txt");
-		
+		gestionFichero gf = new gestionFichero(
+				JOptionPane.showInputDialog("Escriba el nombre del fichero donde quieres guardar la musica"));
+
 		for (int i = 0; i < 3; i++) {
 			cancion can = new cancion();
 			can.setNombreCancion(JOptionPane.showInputDialog("Escriba el nombre de cancion"));
@@ -17,10 +18,7 @@ public class spotif {
 		}
 		if (gf.escribirFichero(listaCanciones))
 			JOptionPane.showMessageDialog(null, "Se ha escrito en el fichero");
-		
-		for (cancion micancion:listaCanciones)
-			JOptionPane.showMessageDialog(null, micancion.getNombreCancion());
 
+		listaCanciones = gf.leerFichero();
 	}
-
 }
