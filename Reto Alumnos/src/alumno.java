@@ -14,43 +14,44 @@ public class alumno {
 	}
 
 	/* Getter and Setter */
-	public static String getDNIAlumno() {
+	public String getDNIAlumno() {
 		return DNIAlumno;
 	}
 
-	public static void setDNIAlumno(String dNIAlumno) {
+	public void setDNIAlumno(String dNIAlumno) {
 		DNIAlumno = dNIAlumno;
 	}
 
-	public static String getNombreAlumno() {
+	public String getNombreAlumno() {
 		return nombreAlumno;
 	}
 
-	public static void setNombreAlumno(String nombreAlumno) {
+	public void setNombreAlumno(String nombreAlumno) {
 		alumno.nombreAlumno = nombreAlumno;
 	}
 
-	public static String getCicloformativo() {
+	public String getCicloformativo() {
 		return Cicloformativo;
 	}
 
-	public static void setCicloformativo(String cicloformativo) {
+	public void setCicloformativo(String cicloformativo) {
 		Cicloformativo = cicloformativo;
 	}
 
-	public static String getModuloAlumno() {
+	public String getModuloAlumno() {
 		return moduloAlumno;
 	}
 
-	public static void setModuloAlumno(String moduloAlumno) {
+	public  void setModuloAlumno(String moduloAlumno) {
 		alumno.moduloAlumno = moduloAlumno;
 	}
 
-	public static String getNotaAlumno() {
+	public String getNotaAlumno() {
 		return notaAlumno;
 	}
 
-	public static void setNotaAlumno(String notaAlumno) {
+	public void setNotaAlumno(String notaAlumno) {
 		alumno.notaAlumno = notaAlumno;
 	}
+	
 }
