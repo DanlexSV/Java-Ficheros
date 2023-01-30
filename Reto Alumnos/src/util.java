@@ -2,19 +2,20 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class util {
-	
+	gestionFichero g;
 	public void printar(ArrayList<alumno> misnotas) {
 		String texto = "";
 		for (alumno notas: misnotas)
 			texto += notas + "\n";
 		JOptionPane.showMessageDialog(null, texto);
 	}
-	public boolean borrar(ArrayList<alumno> misnotas, String DNI) {
+	public boolean borrar(ArrayList<alumno> misnotas, alumno a) {
 		boolean haBorrado = true;
 		try {
-			String delete = JOptionPane.showInputDialog("Escriba el DNI del alumno que quiere eliminar");
+			misnotas.clear();
+			g.leer();
 			for (int i = 0; i < misnotas.size(); i++){
-				if (misnotas.get(i).equals(delete))
+				if (misnotas.get(i).equals(a))
 					misnotas.remove(i);
 				else 
 					JOptionPane.showMessageDialog(null, "No existe el DNI solicitado つ ◕_◕ つ");
@@ -24,5 +25,18 @@ public class util {
 			haBorrado = false; 
 		}
 		return haBorrado;
+	}
+	public boolean modificar(ArrayList<alumno> misnotas, alumno Modulo) {
+		boolean haModificado = true;
+		try {
+			misnotas.clear();
+			g.leer();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			return haModificado = false;
+		}
+		
+		return haModificado;
 	}
 }

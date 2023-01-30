@@ -23,7 +23,8 @@ public class notas {
 				a.setModuloAlumno(JOptionPane.showInputDialog("Escriba el modulo de la nota"));
 				a.setNotaAlumno(JOptionPane.showInputDialog("Escriba la nota que va a subir"));
 				listaAlumnos.add(a);
-				gf.escribir(a);		
+				gf.escribir(a);
+				break;
 			case "L": 
 				NombreFichero = JOptionPane.showInputDialog("Escribe el nombre del fichero de donde quieres ver las notas");
 				File file = new File(NombreFichero);
@@ -31,15 +32,18 @@ public class notas {
 					gf.leer();
 				else 
 					JOptionPane.showMessageDialog(null, "El fichero no existe つ ◕_◕ つ");
+				break;
 			case "B":
 				util u = new util();
-				alumno al = new alumno();
 				NombreFichero = JOptionPane.showInputDialog("Escribe el nombre del fichero de donde quieres ver las notas");
 				File fil = new File(NombreFichero);
-				if (fil.exists())
-					u.borrar(listaAlumnos, al.getDNIAlumno());
+				if (fil.exists()) {
+					a.setDNIAlumno(JOptionPane.showInputDialog("Escribe el nombre del alumno que deseas eliminar"));
+					u.borrar(listaAlumnos, a);
+				}
 				else 
 					JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
+				break;
 			case "M":
 			case "C":
 			default:
