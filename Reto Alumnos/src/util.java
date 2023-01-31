@@ -53,7 +53,7 @@ public class util {
 		g.leer();
 		for (int i = 0; i < misnotas.size(); i++) {
 			if (misnotas.get(i).equals(a)) {
-				JOptionPane.showMessageDialog(null, a);
+				//Completar
 			} else
 				JOptionPane.showMessageDialog(null, "No existe el Modulo solicitado つ ◕_◕ つ");
 		}
