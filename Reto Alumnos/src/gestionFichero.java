@@ -1,6 +1,8 @@
 import java.io.*;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class gestionFichero {
 	
 	private String nombreFichero;
@@ -26,24 +28,28 @@ public class gestionFichero {
 		ArrayList<alumno> misnotas = new ArrayList<alumno>();
 		alumno minota = new alumno();
 		String linea = "";
-		try {
-			FileReader fr = new FileReader(nombreFichero);
-			BufferedReader br = new BufferedReader(fr);
-			while (linea != null) {
-				linea = br.readLine();
-				String campo[] = linea.split(" - ");
-				minota.setDNIAlumno(campo[0]);
-				minota.setNombreAlumno(campo[1]);
-				minota.setCicloformativo(campo[2]);
-				minota.setModuloAlumno(campo[3]);
-				minota.setNotaAlumno(campo[4]);
-				misnotas.add(minota);
+		File file = new File(nombreFichero);
+		if (file.exists()) {
+			try {
+				FileReader fr = new FileReader(nombreFichero);
+				BufferedReader br = new BufferedReader(fr);
+				while ((linea = br.readLine()) != null) {
+					String campo[] = linea.split(" - ");
+					minota.setDNIAlumno(campo[0]);
+					minota.setNombreAlumno(campo[1]);
+					minota.setCicloformativo(campo[2]);
+					minota.setModuloAlumno(campo[3]);
+					minota.setNotaAlumno(campo[4]);
+					misnotas.add(minota);
+				}
+				br.close();
+				fr.close();
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
-			br.close();
-			fr.close();
-		} catch (Exception e) {
-			// TODO: handle exception
 		}
+		else 
+			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
 		return misnotas;
 	}
 	
