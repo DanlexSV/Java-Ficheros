@@ -7,7 +7,7 @@ public class notas {
 	static alumno a = new alumno();
 	static util u = new util();
 	static ArrayList<alumno> listaAlumnos = new ArrayList<alumno>();
-	static String NombreFichero = null;
+	static String NombreFichero;
 	static gestionFichero gf = new gestionFichero(NombreFichero);
 
 	public static void main(String[] args) {
@@ -15,6 +15,7 @@ public class notas {
 		String opt = JOptionPane.showInputDialog("A ~ Alta al alumno" + "\n" + "L ~ Listar las notas" + "\n"
 				+ "B ~ Borrar nota" + "\n" + "M ~ Modificar una nota" + "\n" + "C ~ Consultar las notas" + "\n"
 				+ "S ~ Salir" + "\n" + "Escoja una de las opciones").toUpperCase();
+		NombreFichero = JOptionPane.showInputDialog("Escriba el nombre del Fichero");
 		while (!opt.equals("S")) {
 			switch (opt) {
 			case "A":
@@ -42,7 +43,6 @@ public class notas {
 	}
 
 	private static void Consultar() {
-		NombreFichero = JOptionPane.showInputDialog("Escriba el nombre del alumno que deseas consultar");
 		File file = new File(NombreFichero);
 		if (file.exists()) {
 			a.setModuloAlumno(JOptionPane.showInputDialog("Escriba el Modulo que queire consultar las notas"));
@@ -53,7 +53,6 @@ public class notas {
 	}
 
 	private static void Modificar() {
-		NombreFichero = JOptionPane.showInputDialog("Escribe el nombre del alumno que deseas modificar");
 		File file = new File(NombreFichero);
 		if (file.exists()) {
 			a.setDNIAlumno(JOptionPane.showInputDialog("Escrina el DNI del alumno"));
@@ -66,7 +65,6 @@ public class notas {
 	}
 
 	private static void Borrar() {
-		NombreFichero = JOptionPane.showInputDialog("Escribe el nombre del fichero de donde quieres ver las notas");
 		File file = new File(NombreFichero);
 		if (file.exists()) {
 			a.setDNIAlumno(JOptionPane.showInputDialog("Escribe el DNI del alumno que deseas eliminar"));
@@ -77,7 +75,6 @@ public class notas {
 	}
 
 	private static void Listado() {
-		NombreFichero = JOptionPane.showInputDialog("Escribe el nombre del fichero de donde quieres ver las notas");
 		File file = new File(NombreFichero);
 		if (file.exists())
 			gf.leer();
@@ -86,7 +83,6 @@ public class notas {
 	}
 
 	private static void DarAlta() {
-		NombreFichero = JOptionPane.showInputDialog("Escribe el nombre del fichero donde quieres guardas las notas");
 		a.setDNIAlumno(JOptionPane.showInputDialog("Escriba el DNI del alumno"));
 		a.setNombreAlumno(JOptionPane.showInputDialog("Escriba el nombre del alumno"));
 		a.setCicloformativo(JOptionPane.showInputDialog("Escriba el ciclo formativo actual"));
