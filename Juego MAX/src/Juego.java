@@ -21,6 +21,15 @@ public class Juego {
 			case "L":
 				ArrayList<Jugador> contenido = new ArrayList<Jugador>();
 				contenido = gf.leerFichero();
+				utilidades util = new utilidades();
+				util.listado(contenido);
+				break;
+			case "M":
+				gf.ModificarPuntos();
+				break;
+			case "B":
+				gf.BorrarJugador();
+				break;
 			default:
 				JOptionPane.showMessageDialog(null, "Opcion no valida");
 			}

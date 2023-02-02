@@ -39,6 +39,9 @@ public class Jugador {
 	public void altaJugador() {
 		Nick = JOptionPane.showInputDialog("Escribe tu Nickname");
 		pwd = JOptionPane.showInputDialog("Escribe tu contraseña de usuario");
-		puntos = Integer.parseInt(JOptionPane.showInputDialog("Escribe los puntos que has obtenido"));
+		puntos = 0;
+	}
+	public void listar() {
+		JOptionPane.showMessageDialog(null, Nick + ", " + pwd + ", " + puntos);
 	}
 }
