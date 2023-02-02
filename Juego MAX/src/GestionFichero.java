@@ -81,7 +81,7 @@ public class GestionFichero {
 				JOptionPane.showMessageDialog(null, "El fichero no existe");
 		}*/
 		for (int i = 0; i < contenidoFichero.size(); i++)
-			if (contenidoFichero.get(i).equals(Nick)) {
+			if (contenidoFichero.get(i).getNick().equals(Nick)) {
 				contenidoFichero.remove(i);
 				i--;
 			}

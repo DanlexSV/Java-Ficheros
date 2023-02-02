@@ -1,56 +1,49 @@
+import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class util {
-	gestionFichero g;
 
-	public void printar(ArrayList<alumno> misnotas) {
+	public void printar(ArrayList<alumno> alumnos) {
 		String texto = "";
-		for (alumno notas : misnotas)
-			texto += notas + "\n";
+		for (alumno alumno : alumnos)
+			texto += alumno.getDNIAlumno() + " - " + alumno.getNombreAlumno() + " - " + alumno.getCicloformativo()
+					+ " - " + alumno.getModuloAlumno() + " - " + alumno.getNotaAlumno() + "\n";
 		JOptionPane.showMessageDialog(null, texto);
 	}
 
-	public boolean borrar(ArrayList<alumno> misnotas, alumno a) {
+	public boolean borrar(ArrayList<alumno> contenidoFichero, String DNI, gestionFichero gf) {
 		boolean haBorrado = true;
-		try {
-			misnotas.clear();
-			g.leer();
-			for (int i = 0; i < misnotas.size(); i++) {
-				if (misnotas.get(i).equals(a))
-					misnotas.remove(i);
-				else
-					JOptionPane.showMessageDialog(null, "No existe el DNI solicitado つ ◕_◕ つ");
+		contenidoFichero = new ArrayList<alumno>();
+		contenidoFichero = gf.leer();
+		File f = new File(gf.getNombreFichero());
+		if (f.exists()) {
+			for (int i = 0; i < contenidoFichero.size(); i++) {
+				if (contenidoFichero.get(i).getDNIAlumno().equals(DNI)) {
+					contenidoFichero.remove(i);
+					i--;
+				} else
+					JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			haBorrado = false;
-		}
+		} else
+			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
 		return haBorrado;
 	}
 
-	public boolean modificar(ArrayList<alumno> misnotas, alumno a) {
+	public boolean modificar(ArrayList<alumno> misnotas, String DNI, String Modulo, String Nuevanota,
+			gestionFichero gf) {
 		boolean haModificado = true;
-		try {
-			misnotas.clear();
-			g.leer();
-			for (int i = 0; i < misnotas.size(); i++) {
-				if (misnotas.get(i).equals(a)) {
-					misnotas.remove(i);
-					g.escribir(a);
-				} else 
-					JOptionPane.showMessageDialog(null, "No existe el DNI solicitado つ ◕_◕ つ");
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
-			return haModificado = false;
+		ArrayList<alumno> contenidoFi = new ArrayList<alumno>();
+		contenidoFi = gf.leer();
+		File file = new File(gf.toString());
+		if (file.exists()) {
+
 		}
 		return haModificado;
 	}
-	
+
 	public void consultar(ArrayList<alumno> misnotas, alumno a) {
 		misnotas.clear();
-		g.leer();
 		for (int i = 0; i < misnotas.size(); i++) {
 			if (misnotas.get(i).equals(a)) {
 				JOptionPane.showMessageDialog(null, a);
