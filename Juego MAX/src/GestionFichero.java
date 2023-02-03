@@ -47,7 +47,7 @@ public class GestionFichero {
 			fr.close();
 		} catch (Exception e) {
 			// TODO: handle exception
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "No hay ningun jugador registrado");
 		}
 		return newGame;
 	}

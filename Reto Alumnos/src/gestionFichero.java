@@ -40,16 +40,22 @@ public class gestionFichero {
 		File file = new File(nombreFichero);
 		if (file.exists()) {
 			try {
+				int num = 0;
 				FileReader fr = new FileReader(nombreFichero);
 				BufferedReader br = new BufferedReader(fr);
 				while ((linea = br.readLine()) != null) {
 					String campo[] = linea.split(" - ");
 					alumno minota = new alumno();
-					minota.setDNIAlumno(campo[0]);
-					minota.setNombreAlumno(campo[1]);
-					minota.setCicloformativo(campo[2]);
-					minota.setModuloAlumno(campo[3]);
-					minota.setNotaAlumno(campo[4]);
+					minota.setDNIAlumno(campo[num]);
+					num++;
+					minota.setNombreAlumno(campo[num]);
+					num++;
+					minota.setCicloformativo(campo[num]);
+					num++;
+					minota.setModuloAlumno(campo[num]);
+					num++;
+					minota.setNotaAlumno(campo[num]);
+					num++;
 					alumnos.add(minota);
 				}
 				br.close();

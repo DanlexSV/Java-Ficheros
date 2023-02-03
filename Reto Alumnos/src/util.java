@@ -23,7 +23,7 @@ public class util {
 					contenidoFichero.remove(i);
 					i--;
 				} else
-					JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
+					JOptionPane.showMessageDialog(null, "El DNI no existe つ ◕_◕ つ");
 			}
 		} else
 			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
