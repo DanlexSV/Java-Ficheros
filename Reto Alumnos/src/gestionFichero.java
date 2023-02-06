@@ -35,28 +35,27 @@ public class gestionFichero {
 	}
 
 	public ArrayList<alumno> leer() {
-		ArrayList<alumno> alumnos = new ArrayList<alumno>();
+		ArrayList<alumno> misnotas = new ArrayList<alumno>();
 		String linea = "";
+		alumno minota = new alumno();
 		File file = new File(nombreFichero);
 		if (file.exists()) {
 			try {
-				int num = 0;
 				FileReader fr = new FileReader(nombreFichero);
 				BufferedReader br = new BufferedReader(fr);
 				while ((linea = br.readLine()) != null) {
-					String campo[] = linea.split(" - ");
-					alumno minota = new alumno();
-					minota.setDNIAlumno(campo[num]);
-					num++;
-					minota.setNombreAlumno(campo[num]);
-					num++;
-					minota.setCicloformativo(campo[num]);
-					num++;
-					minota.setModuloAlumno(campo[num]);
-					num++;
-					minota.setNotaAlumno(campo[num]);
-					num++;
-					alumnos.add(minota);
+					String[] spt = linea.split("\n");
+					String[][] matriz = new String[spt.length][];
+					for (int i = 0; i < matriz.length; i++) {
+						String campo[] = linea.split(" - ");
+						matriz[i] = new String[campo.length];
+						minota.setDNIAlumno(matriz[i][0]);
+						minota.setNombreAlumno(matriz[i][1]);
+						minota.setCicloformativo(matriz[i][2]);
+						minota.setModuloAlumno(matriz[i][3]);
+						minota.setNotaAlumno(matriz[i][4]);
+					}
+					misnotas.add(minota);
 				}
 				br.close();
 				fr.close();
@@ -65,7 +64,7 @@ public class gestionFichero {
 			}
 		} else
 			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
-		return alumnos;
+		return misnotas;
 	}
 
 }
