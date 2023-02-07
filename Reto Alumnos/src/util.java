@@ -16,14 +16,18 @@ public class util {
 		boolean haBorrado = true;
 		contenidoFichero = gf.leer();
 		File f = new File(gf.getNombreFichero());
-		if (f.exists())
+		if (f.exists()) {
+			boolean esigual = true;
 			for (int i = 0; i < contenidoFichero.size(); i++)
 				if (contenidoFichero.get(i).getDNIAlumno().equals(DNI)) {
+					esigual = true;
 					contenidoFichero.remove(i);
 					i--;
 				} else
-					JOptionPane.showMessageDialog(null, "El DNI no existe つ ◕_◕ つ");
-		else
+					esigual = false;
+			if (!esigual)
+				JOptionPane.showMessageDialog(null, "El DNI ya ha sido eliminado o no existe つ ◕_◕ つ");
+		} else
 			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
 		return haBorrado;
 	}
@@ -37,7 +41,7 @@ public class util {
 		if (file.exists()) {
 			for (int i = 0; i < contenidoFi.size(); i++) {
 				if (contenidoFi.get(i).getDNIAlumno().equals(DNI)) {
-					
+
 				}
 			}
 		}
