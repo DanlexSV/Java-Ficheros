@@ -15,7 +15,7 @@ public class gestionFichero {
 		this.nombreFichero = nombreFichero;
 	}
 
-	public gestionFichero(String nombreFichero) {		
+	public gestionFichero(String nombreFichero) {
 		super();
 		this.nombreFichero = nombreFichero;
 	}
@@ -37,7 +37,6 @@ public class gestionFichero {
 	public ArrayList<alumno> leer() {
 		ArrayList<alumno> misnotas = new ArrayList<alumno>();
 		String linea = "";
-		//alumno minota = new alumno();
 		File file = new File(nombreFichero);
 		if (file.exists()) {
 			try {
@@ -69,9 +68,6 @@ public class gestionFichero {
 			}
 		} else
 			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
-		System.out.println(misnotas.toString());
-		System.out.println(misnotas.get(1));
-		System.out.println(misnotas.get(2));
 		return misnotas;
 	}
 

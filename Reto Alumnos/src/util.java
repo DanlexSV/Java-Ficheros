@@ -14,18 +14,16 @@ public class util {
 
 	public boolean borrar(ArrayList<alumno> contenidoFichero, String DNI, gestionFichero gf) {
 		boolean haBorrado = true;
-		contenidoFichero = new ArrayList<alumno>();
 		contenidoFichero = gf.leer();
 		File f = new File(gf.getNombreFichero());
-		if (f.exists()) {
-			for (int i = 0; i < contenidoFichero.size(); i++) {
+		if (f.exists())
+			for (int i = 0; i < contenidoFichero.size(); i++)
 				if (contenidoFichero.get(i).getDNIAlumno().equals(DNI)) {
 					contenidoFichero.remove(i);
 					i--;
 				} else
 					JOptionPane.showMessageDialog(null, "El DNI no existe つ ◕_◕ つ");
-			}
-		} else
+		else
 			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
 		return haBorrado;
 	}
@@ -37,7 +35,11 @@ public class util {
 		contenidoFi = gf.leer();
 		File file = new File(gf.toString());
 		if (file.exists()) {
-
+			for (int i = 0; i < contenidoFi.size(); i++) {
+				if (contenidoFi.get(i).getDNIAlumno().equals(DNI)) {
+					
+				}
+			}
 		}
 		return haModificado;
 	}
