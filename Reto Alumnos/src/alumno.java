@@ -1,11 +1,11 @@
 
 public class alumno {
 	/* Atributos */
-	private static String DNIAlumno;
-	private static String nombreAlumno;
-	private static String Cicloformativo;
-	private static String moduloAlumno;
-	private static String notaAlumno;
+	private String DNIAlumno;
+	private String nombreAlumno;
+	private String Cicloformativo;
+	private String moduloAlumno;
+	private String notaAlumno;
 
 	/* Constructor */
 	public alumno() {
@@ -26,8 +26,8 @@ public class alumno {
 		return nombreAlumno;
 	}
 
-	public void setNombreAlumno(String nombreAlumno) {
-		alumno.nombreAlumno = nombreAlumno;
+	public void setNombreAlumno(String n) {
+		nombreAlumno = n;
 	}
 
 	public String getCicloformativo() {
@@ -43,7 +43,7 @@ public class alumno {
 	}
 
 	public  void setModuloAlumno(String moduloAlumno) {
-		alumno.moduloAlumno = moduloAlumno;
+		this.moduloAlumno = moduloAlumno;
 	}
 
 	public String getNotaAlumno() {
@@ -51,7 +51,7 @@ public class alumno {
 	}
 
 	public void setNotaAlumno(String notaAlumno) {
-		alumno.notaAlumno = notaAlumno;
+		this.notaAlumno = notaAlumno;
 	}
 	
 }

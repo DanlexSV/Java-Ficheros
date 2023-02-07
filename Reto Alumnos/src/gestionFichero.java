@@ -15,7 +15,7 @@ public class gestionFichero {
 		this.nombreFichero = nombreFichero;
 	}
 
-	public gestionFichero(String nombreFichero) {
+	public gestionFichero(String nombreFichero) {		
 		super();
 		this.nombreFichero = nombreFichero;
 	}
@@ -37,7 +37,7 @@ public class gestionFichero {
 	public ArrayList<alumno> leer() {
 		ArrayList<alumno> misnotas = new ArrayList<alumno>();
 		String linea = "";
-		alumno minota = new alumno();
+		//alumno minota = new alumno();
 		File file = new File(nombreFichero);
 		if (file.exists()) {
 			try {
@@ -48,6 +48,7 @@ public class gestionFichero {
 					String campo[] = linea.split(" - ");
 					String[][] matriz = new String[spt.length][campo.length];
 					for (int i = 0; i < matriz.length; i++) {
+						alumno minota = new alumno();
 						matriz[i][0] = campo[0];
 						matriz[i][1] = campo[1];
 						matriz[i][2] = campo[2];
@@ -58,8 +59,8 @@ public class gestionFichero {
 						minota.setCicloformativo(matriz[i][2]);
 						minota.setModuloAlumno(matriz[i][3]);
 						minota.setNotaAlumno(matriz[i][4]);
+						misnotas.add(minota);
 					}
-					misnotas.add(minota);
 				}
 				br.close();
 				fr.close();
@@ -68,6 +69,9 @@ public class gestionFichero {
 			}
 		} else
 			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
+		System.out.println(misnotas.toString());
+		System.out.println(misnotas.get(1));
+		System.out.println(misnotas.get(2));
 		return misnotas;
 	}
 
