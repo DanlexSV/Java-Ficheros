@@ -45,10 +45,14 @@ public class gestionFichero {
 				BufferedReader br = new BufferedReader(fr);
 				while ((linea = br.readLine()) != null) {
 					String[] spt = linea.split("\n");
-					String[][] matriz = new String[spt.length][];
+					String campo[] = linea.split(" - ");
+					String[][] matriz = new String[spt.length][campo.length];
 					for (int i = 0; i < matriz.length; i++) {
-						String campo[] = linea.split(" - ");
-						matriz[i] = new String[campo.length];
+						matriz[i][0] = campo[0];
+						matriz[i][1] = campo[1];
+						matriz[i][2] = campo[2];
+						matriz[i][3] = campo[3];
+						matriz[i][4] = campo[4];
 						minota.setDNIAlumno(matriz[i][0]);
 						minota.setNombreAlumno(matriz[i][1]);
 						minota.setCicloformativo(matriz[i][2]);

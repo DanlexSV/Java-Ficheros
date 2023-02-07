@@ -22,7 +22,6 @@ public class notas {
 				ArrayList<alumno> alumnos = new ArrayList<alumno>();
 				alumnos = gf.leer();
 				util.printar(alumnos);
-				
 				break;
 			case "B":
 				ArrayList<alumno> contenido = new ArrayList<alumno>();
