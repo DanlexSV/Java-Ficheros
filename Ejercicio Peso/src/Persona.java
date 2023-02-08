@@ -1,3 +1,4 @@
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Persona {
@@ -11,12 +12,14 @@ public class Persona {
 	public Persona() {
 		super();
 		// TODO Auto-generated constructor stub
+		this.DNI = generaDNI();
 	}
 	public Persona(String nombre, int edad, char sexo) {
 		super();
 		this.nombre = nombre;
 		this.edad = edad;
 		this.sexo = sexo;
+		this.DNI = generaDNI();
 	}
 	public Persona(String nombre, String dNI, char sexo, int edad, double peso, double altura) {
 		super();
@@ -68,5 +71,18 @@ public class Persona {
 		else
 			esMayor = false;
 		return esMayor;
+	}
+	private String generaDNI() {
+		String gDNI = "";
+		Random r = new Random();
+		int numb = r.nextInt(10);
+		for (int i = 0; i < 8; i++)
+			gDNI.charAt(numb);
+		return String.valueOf(gDNI);
+	}
+	
+	@Override
+	public String toString() {
+		return (nombre + " " + DNI + " " + edad + " " + sexo + " " + altura + " " + peso);
 	}
 }

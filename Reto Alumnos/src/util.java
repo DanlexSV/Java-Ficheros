@@ -1,4 +1,6 @@
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -29,7 +31,21 @@ public class util {
 				JOptionPane.showMessageDialog(null, "El DNI ya ha sido eliminado o no existe つ ◕_◕ つ");
 		} else
 			JOptionPane.showMessageDialog(null, "Este fichero no existe つ ◕_◕ つ");
+		saveFichero(contenidoFichero, gf);
 		return haBorrado;
+	}
+
+	private void saveFichero(ArrayList<alumno> contenidoFichero, gestionFichero gf) {
+		try {
+			FileWriter fw = new FileWriter(gf.getNombreFichero());
+			BufferedWriter bw = new BufferedWriter(fw);
+			bw.write(contenidoFichero + "\n");
+			bw.close();
+			fw.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 	public boolean modificar(ArrayList<alumno> misnotas, String DNI, String Modulo, String Nuevanota,
