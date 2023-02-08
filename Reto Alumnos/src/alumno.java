@@ -5,7 +5,7 @@ public class alumno {
 	private String nombreAlumno;
 	private String Cicloformativo;
 	private String moduloAlumno;
-	private String notaAlumno;
+	private double notaAlumno;
 
 	/* Constructor */
 	public alumno() {
@@ -46,11 +46,11 @@ public class alumno {
 		this.moduloAlumno = moduloAlumno;
 	}
 
-	public String getNotaAlumno() {
+	public double getNotaAlumno() {
 		return notaAlumno;
 	}
 
-	public void setNotaAlumno(String notaAlumno) {
+	public void setNotaAlumno(double notaAlumno) {
 		this.notaAlumno = notaAlumno;
 	}
 	

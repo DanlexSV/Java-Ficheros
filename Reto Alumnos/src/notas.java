@@ -29,6 +29,10 @@ public class notas {
 				util.borrar(contenido, DNI, gf);
 				break;
 			case "M":
+				ArrayList<alumno> listaalum = new ArrayList<alumno>();
+				String dNI = JOptionPane.showInputDialog("Escribe el DNI del alumno");
+				String Modulo = JOptionPane.showInputDialog("Escribe el modulo donde se modificara la nota");
+				util.modificar(listaalum, dNI, Modulo, gf);
 				break;
 			case "C":
 				break;
@@ -41,11 +45,11 @@ public class notas {
 	}
 
 	private static void altaAlumno(alumno alumno) {
-		alumno.setDNIAlumno(JOptionPane.showInputDialog("Escriba el DNI del alumno"));
+		alumno.setDNIAlumno(JOptionPane.showInputDialog("Escriba el DNI del alumno").toUpperCase());
 		alumno.setNombreAlumno(JOptionPane.showInputDialog("Escriba el nombre del alumno"));
 		alumno.setCicloformativo(JOptionPane.showInputDialog("Escriba el ciclo formativo actual"));
 		alumno.setModuloAlumno(JOptionPane.showInputDialog("Escriba el modulo de la nota"));
-		alumno.setNotaAlumno(JOptionPane.showInputDialog("Escriba la nota del alumno"));
+		alumno.setNotaAlumno(Double.parseDouble(JOptionPane.showInputDialog("Escriba la nota del alumno")));
 	}
 
 }

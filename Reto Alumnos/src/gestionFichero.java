@@ -57,7 +57,7 @@ public class gestionFichero {
 						minota.setNombreAlumno(matriz[i][1]);
 						minota.setCicloformativo(matriz[i][2]);
 						minota.setModuloAlumno(matriz[i][3]);
-						minota.setNotaAlumno(matriz[i][4]);
+						minota.setNotaAlumno(Double.parseDouble(matriz[i][4]));
 						misnotas.add(minota);
 					}
 				}
