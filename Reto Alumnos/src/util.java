@@ -13,7 +13,8 @@ public class util {
 					+ " - " + alumno.getModuloAlumno() + " - " + alumno.getNotaAlumno() + "\n";
 		JOptionPane.showMessageDialog(null, texto);
 	}
-
+	
+	
 	public boolean borrar(ArrayList<alumno> contenidoFichero, String DNI, gestionFichero gf) {
 		boolean haBorrado = true;
 		contenidoFichero = gf.leer();
