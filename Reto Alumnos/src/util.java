@@ -52,10 +52,9 @@ public class util {
 		}
 	}
 
-	public boolean modificar(ArrayList<alumno> misnotas, String DNI, String Modulo, gestionFichero gf) {
+	public boolean modificar(ArrayList<alumno> contenidoFi, String DNI, String Modulo, gestionFichero gf) {
 		boolean haModificado = true;
 		double nuevaNota;
-		ArrayList<alumno> contenidoFi = new ArrayList<alumno>();
 		contenidoFi = gf.leer();
 		File file = new File(gf.getNombreFichero());
 		if (file.exists()) {
@@ -71,18 +70,26 @@ public class util {
 			}
 			if (!siModifico)
 				JOptionPane.showMessageDialog(null, "No se ha encontrado al alumno o su modulo つ ◕_◕ つ");
-		} else 
+		} else
 			JOptionPane.showMessageDialog(null, "El fichero no existe つ ◕_◕ つ");
 		return haModificado;
 	}
 
-	public void consultar(ArrayList<alumno> misnotas, alumno a) {
-		misnotas.clear();
-		for (int i = 0; i < misnotas.size(); i++) {
-			if (misnotas.get(i).equals(a)) {
-				JOptionPane.showMessageDialog(null, a);
-			} else
-				JOptionPane.showMessageDialog(null, "No existe el Modulo solicitado つ ◕_◕ つ");
-		}
+	public void consultar(ArrayList<alumno> misnotas, String modulo, gestionFichero gf) {
+		misnotas = gf.leer();
+		String texto = "";
+		File file = new File(gf.getNombreFichero());
+		if (file.exists()) {
+			boolean existeModulo = false;
+			for (int i = 0; i < misnotas.size(); i++)
+				if (misnotas.get(i).getModuloAlumno().equals(modulo)) {
+					existeModulo = true;
+					texto += misnotas.get(i) + "\n";
+				}
+			JOptionPane.showMessageDialog(null, texto);
+			if (!existeModulo)
+				JOptionPane.showMessageDialog(null, "No se ha encontrado el modulo つ ◕_◕ つ");
+		} else
+			JOptionPane.showMessageDialog(null, "El fichero no existe つ ◕_◕ つ");
 	}
 }
