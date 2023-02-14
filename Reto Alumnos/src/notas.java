@@ -35,6 +35,9 @@ public class notas {
 				util.modificar(listaalum, dNI, Modulo, gf);
 				break;
 			case "C":
+				ArrayList<alumno> modulonotas = new ArrayList<alumno>();
+				String modulo = JOptionPane.showInputDialog("Escribe el modulo");
+				util.consultar(modulonotas, modulo, gf);
 				break;
 			default:
 			}
