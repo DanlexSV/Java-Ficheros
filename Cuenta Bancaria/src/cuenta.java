@@ -14,7 +14,8 @@ public class cuenta {
 	}
 	/*Constructor con un campo*/
 	public cuenta() {
-		this.titular = titular;
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/*getter & setter*/

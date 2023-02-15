@@ -2,8 +2,8 @@
 public class Electrodomestico {
 
 	private double precio_base;
-	private int peso;
-	private String color;
+	private int peso, cantidad;
+	private String color, Nombre;
 	private char consumo_energetico;
 
 	/* Definimos constantes */
@@ -71,6 +71,22 @@ public class Electrodomestico {
 		return consumo_energetico;
 	}
 
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public String getNombre() {
+		return Nombre;
+	}
+
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+
 	public void setConsumo_energetico(char consumo_energetico) {
 		this.consumo_energetico = consumo_energetico;
 	}
@@ -90,28 +106,29 @@ public class Electrodomestico {
 		return false;
 	}
 	
-	private double precioFinal() {
+	public double precioFinal() {
 		double precionew = 0;
-		switch (getConsumo_energetico()) {
+		switch (consumo_energetico) {
 		case 'A': 
-			precionew = getConsumo_energetico() + 100;
+			precionew = getPrecio_base() + 100;
 			break;
 		case 'B':
-			precionew = getConsumo_energetico() + 80;
+			precionew = getPrecio_base() + 80;
 			break;
 		case 'C':
-			precionew = getConsumo_energetico() + 60;
+			precionew = getPrecio_base() + 60;
 			break;
 		case 'D':
-			precionew = getConsumo_energetico() + 50;
+			precionew = getPrecio_base() + 50;
 			break;
 		case 'E':
-			precionew = getConsumo_energetico() + 30;
+			precionew = getPrecio_base() + 30;
 			break;
 		case 'F':
-			precionew = getConsumo_energetico() + 10;
+			precionew = getPrecio_base() + 10;
 			break;
 		}
 		return precionew;
 	}
+	
 }
