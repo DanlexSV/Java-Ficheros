@@ -1,7 +1,7 @@
 
 public class Discos {
 	
-	private String fechaPublicacion, cancion, titulo, nombreCantante_Grupo;
+	private String fechaPublicacion, canciones, titulo, nombreCantante_Grupo;
 
 	public Discos() {
 		super();
@@ -16,12 +16,12 @@ public class Discos {
 		this.fechaPublicacion = fechaPublicacion;
 	}
 
-	public String getCancion() {
-		return cancion;
+	public String getCanciones() {
+		return canciones;
 	}
 
-	public void setCancion(String cancion) {
-		this.cancion = cancion;
+	public void setCanciones(String canciones) {
+		this.canciones = canciones;
 	}
 
 	public String getTitulo() {
